@@ -1,0 +1,12 @@
+{
+  "name" : "Best currencies exchange",
+  "version": "1.0.0",
+  "description": "This is an extension to convert currencies ",
+  "manifest_version": 3,
+  "author": "Kamil Sodo",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Best currencies exchange"
+  },
+  "permissions": ["tabs", "activeTab"]
+}
