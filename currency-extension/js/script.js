@@ -1,8 +1,8 @@
-let baseOption = document.querySelectorAll(".base");
-let quoteOption = document.querySelectorAll(".quote");
-let amountInput = document.querySelector("#amount-input");
-let baseDropdown = document.querySelector("#dropdownBaseCurrency");
-let quoteDropdown = document.querySelector("#dropdownQuoteCurrency");
+const baseOption = document.querySelectorAll(".base");
+const quoteOption = document.querySelectorAll(".quote");
+const amountInput = document.querySelector("#amount-input");
+const baseDropdown = document.querySelector("#dropdownBaseCurrency");
+const quoteDropdown = document.querySelector("#dropdownQuoteCurrency");
 
 function chooseBaseCurrency() {
     baseOption.forEach((option) => {
@@ -17,7 +17,6 @@ function chooseBaseCurrency() {
 function chooseQuoteCurrency() {
     quoteOption.forEach((option) => {
         option.addEventListener("click", () => {
-
             quoteDropdown.innerHTML = option.innerHTML;
         })
     });
@@ -38,25 +37,22 @@ let requestOptions = {
     headers: myHeaders
 };
 
-
 function calculateCurrency() {
     document.querySelector(".final-rate").innerHTML = "";
-    let baseSymbol = baseDropdown.innerHTML.replace("Chosen base currency : ", "").slice(0, 3);
-    let quoteSymbol = quoteDropdown.innerHTML.replace("Chosen quote currency : ", "").slice(0, 3);
-    let amount = parseInt(amountInput.value);
-
+    const baseSymbol = baseDropdown.innerHTML.replace("Chosen base currency : ", "").slice(0, 3);
+    const quoteSymbol = quoteDropdown.innerHTML.replace("Chosen quote currency : ", "").slice(0, 3);
+    const amount = parseInt(amountInput.value);
     fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${quoteSymbol}&from=${baseSymbol}&amount=${amount}`, requestOptions)
         .then(response => response.json())
         .then(data => {
-
             document.querySelector(".final-rate").innerHTML = parseFloat(data.result.toFixed(2));
         })
         .catch(error => console.log('error', error));
 }
 
-let calcBtn = document.querySelector(".calc-btn");
+const calcBtn = document.querySelector(".calc-btn");
 calcBtn.addEventListener("click", calculateCurrency);
-let switchBtn = document.querySelector("#switch-rates");
+const switchBtn = document.querySelector("#switch-rates");
 switchBtn.addEventListener("click", swapCurrencies);
 chooseBaseCurrency();
 chooseQuoteCurrency();
