@@ -9,7 +9,6 @@ function chooseBaseCurrency() {
         option.addEventListener("click", () => {
             baseDropdown.innerHTML = option.innerHTML;
             amountInput.style.visibility = "visible";
-            console.log(baseDropdown.innerHTML.length);
         })
     });
 }
@@ -31,7 +30,7 @@ function swapCurrencies() {
 
 let myHeaders = new Headers();
 myHeaders.append("apikey", "fhccg2sVQcJJJqpzcql0HWYyUHVzYaAj");
-let requestOptions = {
+const requestOptions = {
     method: 'GET',
     redirect: 'follow',
     headers: myHeaders
@@ -42,7 +41,8 @@ function calculateCurrency() {
     const baseSymbol = baseDropdown.innerHTML.replace("Chosen base currency : ", "").slice(0, 3);
     const quoteSymbol = quoteDropdown.innerHTML.replace("Chosen quote currency : ", "").slice(0, 3);
     const amount = parseInt(amountInput.value);
-    fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${quoteSymbol}&from=${baseSymbol}&amount=${amount}`, requestOptions)
+    const url = `https://api.apilayer.com/exchangerates_data/convert?to=${quoteSymbol}&from=${baseSymbol}&amount=${amount}`;
+    fetch(url, requestOptions)
         .then(response => response.json())
         .then(data => {
             document.querySelector(".final-rate").innerHTML = parseFloat(data.result.toFixed(2));
@@ -56,5 +56,3 @@ const switchBtn = document.querySelector("#switch-rates");
 switchBtn.addEventListener("click", swapCurrencies);
 chooseBaseCurrency();
 chooseQuoteCurrency();
-
-
