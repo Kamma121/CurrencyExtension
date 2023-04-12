@@ -1,0 +1,19 @@
+{
+  "name": "Best currencies converter",
+  "version": "1.0.0",
+  "description": "This is an extension that convert currencies ",
+  "manifest_version": 3,
+  "author": "Kamil Sodo",
+  "icons": {
+    "48": "icons/logo-48.png",
+    "128": "icons/logo-128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Best currencies converter"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ]
+}

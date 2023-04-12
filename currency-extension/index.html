@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency converter</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="main-menu">
+    <div class="amount"><input id="amount-input" type="text" placeholder="Enter the amount"></div>
+    <div class="menu first">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownBaseCurrency"
+                    data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Choose base currency
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownBaseCurrency">
+                <a class="dropdown-item base" href="#">PLN <span class="fi fi-pl"></span></a>
+                <a class="dropdown-item base" href="#">GBP <span class="fi fi-gb"></span></a>
+                <a class="dropdown-item base" href="#">USD <span class="fi fi-us"></span></a>
+                <a class="dropdown-item base" href="#">EUR <span class="fi fi-eu"></span></a>
+            </div>
+        </div>
+    </div>
+    <i class="bi bi-arrow-down-up" id="switch-rates"></i>
+    <div class="menu second">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownQuoteCurrency"
+                    data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Choose quote currency
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownQuoteCurrency">
+                <a class="dropdown-item quote" href="#">PLN <span class="fi fi-pl"></span></a>
+                <a class="dropdown-item quote" href="#">GBP <span class="fi fi-gb"></span></a>
+                <a class="dropdown-item quote" href="#">USD <span class="fi fi-us"></span></a>
+                <a class="dropdown-item quote" href="#">EUR <span class="fi fi-eu"></span></a>
+            </div>
+        </div>
+        <div class="quote-currency"></div>
+    </div>
+    <button class="calc-btn">Calculate</button>
+    <h3 class="final-rate"></h3>
+</div>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
