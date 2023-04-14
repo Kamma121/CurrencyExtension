@@ -25,9 +25,9 @@ Drag and drop a folder with project
 ## Screenshots
 
 <div style="text-align:center; display: flex; gap:5px">
-  <img width="400px" height="600" src="https://user-images.githubusercontent.com/109139766/232158279-1ec13817-1536-4542-b59e-af967b8a2cc3.png" alt="Screenshot 1" width="400" />
-  <img width="400px" height="600" src="https://user-images.githubusercontent.com/109139766/232158328-b6d56fdb-20cd-45e8-a2f9-4b7411117ee4.png" alt="Screenshot 2" width="400" />
-  <img width="400px" height="600" src="https://user-images.githubusercontent.com/109139766/232158173-b6bbcfc7-7bf9-44d3-b129-cb88e53a06b2.png" alt="Screenshot 3" width="400" />
+  <img width="320px" height="480" src="https://user-images.githubusercontent.com/109139766/232158279-1ec13817-1536-4542-b59e-af967b8a2cc3.png" alt="Screenshot 1" width="400" />
+  <img width="320px" height="480" src="https://user-images.githubusercontent.com/109139766/232158328-b6d56fdb-20cd-45e8-a2f9-4b7411117ee4.png" alt="Screenshot 2" width="400" />
+  <img width="320px" height="480" src="https://user-images.githubusercontent.com/109139766/232158173-b6bbcfc7-7bf9-44d3-b129-cb88e53a06b2.png" alt="Screenshot 3" width="400" />
 </div>
 
 ## Feedback
