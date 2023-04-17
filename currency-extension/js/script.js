@@ -41,11 +41,17 @@ function calculateCurrency() {
     const baseSymbol = baseDropdown.innerHTML.replace("Chosen base currency : ", "").slice(0, 3);
     const quoteSymbol = quoteDropdown.innerHTML.replace("Chosen quote currency : ", "").slice(0, 3);
     const amount = parseInt(amountInput.value);
+    const loading = document.querySelector("#loading");
+    const finalRate = document.querySelector(".final-rate");
+    finalRate.style.display = "none";
+    loading.style.display = "block";
     const url = `https://api.apilayer.com/exchangerates_data/convert?to=${quoteSymbol}&from=${baseSymbol}&amount=${amount}`;
     fetch(url, requestOptions)
         .then(response => response.json())
         .then(data => {
-            document.querySelector(".final-rate").innerHTML = parseFloat(data.result.toFixed(2));
+            loading.style.display = "none";
+            finalRate.innerHTML = parseFloat(data.result.toFixed(2));
+            finalRate.style.display = "block";
         })
         .catch(error => console.log('error', error));
 }
